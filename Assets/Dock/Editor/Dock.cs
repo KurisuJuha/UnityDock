@@ -1,4 +1,4 @@
-using System;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,14 +7,7 @@ namespace JuhaKurisu.UnityDock
     public class DockWindow : EditorWindow
     {
         private static DockWindow dockWindow;
-        private readonly string[] tabContents = { "Packages", "ColorScheme" };
-        private readonly Action[] tabOnGUIFuncs;
-
-        public DockWindow()
-        {
-            tabOnGUIFuncs = new Action[] { PackagesTab, ColorSchemeTab };
-        }
-
+        private readonly Tab[] tabs = new Tab[] { new PackagesTab() };
         int tabIndex;
 
         [MenuItem("Tools/Dock")]
@@ -28,19 +21,9 @@ namespace JuhaKurisu.UnityDock
         {
             using (new EditorGUILayout.HorizontalScope(EditorStyles.toolbar))
             {
-                tabIndex = GUILayout.Toolbar(tabIndex, tabContents, new GUIStyle(EditorStyles.toolbarButton), GUI.ToolbarButtonSize.Fixed);
+                tabIndex = GUILayout.Toolbar(tabIndex, tabs.Select(t => t.name).ToArray(), new GUIStyle(EditorStyles.toolbarButton), GUI.ToolbarButtonSize.Fixed);
             }
-            tabOnGUIFuncs[tabIndex].Invoke();
-        }
-
-        private void PackagesTab()
-        {
-
-        }
-
-        private void ColorSchemeTab()
-        {
-
+            tabs[tabIndex].OnGUI();
         }
     }
 }
