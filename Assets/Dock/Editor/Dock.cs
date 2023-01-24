@@ -25,5 +25,10 @@ namespace JuhaKurisu.UnityDock
             }
             tabs[tabIndex].OnGUI();
         }
+
+        public void CreateGUI()
+        {
+            rootVisualElement.Add(new UnityEngine.UIElements.Label("test"));
+        }
     }
 }

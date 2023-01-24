@@ -20,10 +20,20 @@ namespace JuhaKurisu.UnityDock
                     {
                         using (new EditorGUILayout.VerticalScope())
                         {
-                            GUILayout.Button("test");
-                            GUILayout.Button("test");
-                            GUILayout.Button("test");
-                            GUILayout.Button("test");
+                            var style = new GUIStyle(EditorStyles.label);
+                            style.richText = true;
+
+                            EditorGUILayout.LabelField("<size=30>Test</size>", style, GUILayout.Height(30));
+                            EditorGUILayout.LabelField("テステスのテスト");
+                        }
+
+                        GUILayout.FlexibleSpace();
+
+                        using (new EditorGUILayout.VerticalScope("Box", GUILayout.Height(50)))
+                        {
+                            GUILayout.FlexibleSpace();
+                            GUILayout.Button("hoge");
+                            GUILayout.FlexibleSpace();
                         }
                     }
                 }
