@@ -242,6 +242,20 @@
       },
       "url": "https://packages.unity.com"
     },
+    "jp.juhakurisu.popoextentions": {
+      "version": "https://github.com/KurisuJuha/popoExtentions.git?path=Assets/popoExtentions",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "02bb1f897ada987184096265c28639394de4a67c"
+    },
+    "jp.juhakurisu.replacer": {
+      "version": "https://github.com/KurisuJuha/Replacer.git?path=Assets/Replacer",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "469e44cdf3060bee16ddbd82a6d6c967a851e219"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
